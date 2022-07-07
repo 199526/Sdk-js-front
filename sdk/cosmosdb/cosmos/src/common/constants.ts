@@ -179,11 +179,12 @@ export const Constants = {
   ThrottleRetryCount: "x-ms-throttle-retry-count",
   ThrottleRetryWaitTimeInMs: "x-ms-throttle-retry-wait-time-ms",
 
-  //Platform
+  // Platform
   CurrentVersion: "2020-07-15",
-  Namespace: "Azure.Cosmos",
-  SDKName: "@azure/azure-cosmos-js",
-  SDKVersion: "3.16.2",
+  AzureNamespace: "Azure.Cosmos",
+  AzurePackageName: "@azure/cosmos",
+  SDKName: "azure-cosmos-js",
+  SDKVersion: "3.16.3",
 
   Quota: {
     CollectionSize: "collectionSize",
@@ -444,11 +445,4 @@ export enum SasTokenPermissionKind {
   TriggerRead = PermissionScopeValues.ScopeTriggerReadValue,
   TriggerReplace = PermissionScopeValues.ScopeTriggerReplaceValue,
   TriggerDelete = PermissionScopeValues.ScopeTriggerDeleteValue,
-}
-
-/**
- * @hidden
- */
-export enum diagno {
-
 }
