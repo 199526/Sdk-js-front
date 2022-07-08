@@ -8,6 +8,7 @@
 /// <reference lib="esnext.asynciterable" />
 
 import { AbortSignal as AbortSignal_2 } from 'node-abort-controller';
+import { OperationTracingOptions } from '@azure/core-tracing';
 import { Pipeline } from '@azure/core-rest-pipeline';
 import { TokenCredential } from '@azure/core-auth';
 
@@ -594,6 +595,8 @@ export class Database {
     readonly containers: Containers;
     delete(options?: RequestOptions): Promise<DatabaseResponse>;
     // (undocumented)
+    getDiagnostics(): string;
+    // (undocumented)
     readonly id: string;
     read(options?: RequestOptions): Promise<DatabaseResponse>;
     readOffer(options?: RequestOptions): Promise<OfferResponse>;
@@ -762,6 +765,8 @@ export class FeedResponse<TResource> {
     get continuation(): string;
     // (undocumented)
     get continuationToken(): string;
+    // (undocumented)
+    getDiagnostics(): string;
     // (undocumented)
     readonly hasMoreResults: boolean;
     // (undocumented)
@@ -1446,6 +1451,8 @@ export interface RequestContext {
     resourceType?: ResourceType;
     // (undocumented)
     retryCount?: number;
+    // (undocumented)
+    tracingOptions?: OperationTracingOptions;
 }
 
 // @public (undocumented)
@@ -1499,6 +1506,8 @@ export class ResourceResponse<TResource> {
     get activityId(): string;
     // (undocumented)
     get etag(): string;
+    // (undocumented)
+    get getDiagnostics(): string;
     // (undocumented)
     readonly headers: CosmosHeaders_2;
     // (undocumented)
@@ -1723,6 +1732,8 @@ export interface SharedOptions {
     // @beta
     maxIntegratedCacheStalenessInMs?: number;
     sessionToken?: string;
+    // @beta
+    tracingOptions?: OperationTracingOptions;
 }
 
 // @public (undocumented)

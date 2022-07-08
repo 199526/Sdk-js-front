@@ -11,6 +11,7 @@ import { DatabaseResponse } from "./DatabaseResponse";
 import { OfferResponse, OfferDefinition, Offer } from "../Offer";
 import { Resource } from "../Resource";
 import { tracingClient } from "../../utils/tracing";
+import { CosmosDiagnostics } from "../../diagnostics/CosmosDiagnostics";
 
 /**
  * Operations for reading or deleting an existing database.
@@ -132,5 +133,9 @@ return new DatabaseResponse(response.result, response.headers, response.code, th
       ? new Offer(this.client, response.result[0].id, this.clientContext)
       : undefined;
     return new OfferResponse(response.result[0], response.headers, response.code, offer);
+  }
+
+  public getDiagnostics(): string {
+    return CosmosDiagnostics.toString();
   }
 }
